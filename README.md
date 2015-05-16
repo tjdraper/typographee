@@ -1,6 +1,6 @@
 # Typographee 1.0.0 for ExpressionEngine
 
-Easily set up an email form to send via the Mandrill API.
+Parse content through EE typography class.
 
 ## Docuemntation
 
