@@ -2,7 +2,7 @@
 
 if (! defined('TYPOGRAPHEE_NAME')) {
 	define('TYPOGRAPHEE_NAME', 'Typographee');
-	define('TYPOGRAPHEE_VER', '1.0.0');
+	define('TYPOGRAPHEE_VER', '1.0.1');
 	define('TYPOGRAPHEE_AUTHOR', 'TJ Draper');
 	define('TYPOGRAPHEE_AUTHOR_URL', 'http://buzzingpixel.com');
 	define('TYPOGRAPHEE_DESC', 'Parse content through EE typography class');

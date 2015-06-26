@@ -1,4 +1,4 @@
-# Typographee 1.0.0 for ExpressionEngine
+# Typographee 1.0.1 for ExpressionEngine
 
 Parse content through EE typography class.
 

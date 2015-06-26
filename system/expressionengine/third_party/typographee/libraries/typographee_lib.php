@@ -28,6 +28,11 @@ class Typographee_lib
 		ee()->load->library('typography');
 		ee()->typography->initialize();
 
+		// Fix EE mangling URLs in markup
+		$old_method = isset($_GET['M']) ? $_GET['M'] : false;
+		$_GET['M'] = 'send_email';
+
+		// Set default prefs
 		$defaultPrefs = array(
 			'text_format' => 'all',
 			'html_format' => 'all',
@@ -35,8 +40,19 @@ class Typographee_lib
 			'allow_img_url' => 'y'
 		);
 
+		// Merge in custom prefs
 		$prefs = array_merge($defaultPrefs, $prefs);
 
-		return ee()->typography->parse_type($data, $prefs);
+		// Parse data through typography class
+		$data = ee()->typography->parse_type($data, $prefs);
+
+		// Return EE to defaults
+		if ($old_method) {
+			$_GET['M'] = $old_method;
+		} else {
+			unset($_GET['M']);
+		}
+
+		return $data;
 	}
 }

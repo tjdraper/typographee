@@ -1,3 +1,9 @@
+# Version 1.0.1
+
+## Released 06-25-2015
+
+- Fixed a bug where URLs in WYGWAM fields would be mangled on entry save when using the extension with WYGWAM.
+
 # Version 1.0.0
 
 ## Released 05-16-2015
