@@ -1,3 +1,16 @@
+# Version 2.0.0
+
+## Released 10-24-2015
+
+## Breaking
+
+- Typographee 2.0.0 is not compatible with ExpressionEngine 2.x
+- Removed extension and WYGWAM support for now if/until WYGWAM is compatible with ExpressionEngine 3
+
+## Updated
+
+- Added compatibility for ExpressionEngine 3
+
 # Version 1.0.1
 
 ## Released 06-25-2015
