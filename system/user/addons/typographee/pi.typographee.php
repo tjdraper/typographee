@@ -1,8 +1,5 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
-// Include configuration
-include(PATH_THIRD . 'typographee/config.php');
-
 /**
  * Typographee plugin
  *
@@ -11,14 +8,6 @@ include(PATH_THIRD . 'typographee/config.php');
  * @link https://buzzingpixel.com/ee-add-ons/typographee
  * @copyright Copyright (c) 2015, BuzzingPixel
  */
-
-$plugin_info = array (
-	'pi_name' => TYPOGRAPHEE_NAME,
-	'pi_version' => TYPOGRAPHEE_VER,
-	'pi_author' => TYPOGRAPHEE_AUTHOR,
-	'pi_author_url' => TYPOGRAPHEE_AUTHOR_URL,
-	'pi_description' => TYPOGRAPHEE_DESC
-);
 
 class Typographee
 {
@@ -29,7 +18,7 @@ class Typographee
 	 */
 	public function parse()
 	{
-		ee()->load->library('typographee_lib');
+		$typographyService = ee('typographee:TypographyService');
 
 		// Check text format param
 		$allowedTextFormat = array('all', 'xhtml', 'br', 'lite');
@@ -59,9 +48,6 @@ class Typographee
 			'allow_img_url' => $allowImgUrl
 		);
 
-		return ee()->typographee_lib->typographyParser(
-			ee()->TMPL->tagdata,
-			$prefs
-		);
+		return $typographyService->parse(ee()->TMPL->tagdata, $prefs);
 	}
 }

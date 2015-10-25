@@ -1,15 +1,8 @@
-<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-/**
- * Typographee library
- *
- * @package typographee
- * @author TJ Draper <tj@buzzingpixel.com>
- * @link https://buzzingpixel.com/ee-add-ons/typographee
- * @copyright Copyright (c) 2015, BuzzingPixel
- */
+namespace BuzzingPixel\Addons\Typographee\Service;
 
-class Typographee_lib
+class Typography
 {
 	/**
 	 * Process string through EE typography library
@@ -23,7 +16,7 @@ class Typographee_lib
 	 * }
 	 * @return string
 	 */
-	public function typographyParser($data = '', $prefs = array())
+	public function parse($data = '', $prefs = array())
 	{
 		ee()->load->library('typography');
 		ee()->typography->initialize();
